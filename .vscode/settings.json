@@ -1,13 +1,17 @@
 {
   // Workbench
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.labelFormat": "short",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editor.untitled.hint": "hidden",
 
   // Editor settings
   "editor.wordWrap": "on",
+  "editor.fontSize": 12,
   "editor.lineHeight": 20,
+  "terminal.integrated.fontSize": 12,
   "editor.tabSize": 2,
+  "editor.fontFamily": "JetBrains Mono, Fira Code",
   "editor.fontLigatures": true,
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [80, 120],
@@ -66,5 +70,7 @@
   "gitlens.hovers.currentLine.over": "line",
   "liveServer.settings.donotShowInfoMsg": true,
   "git.confirmSync": false,
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "prettier.singleQuote": true,
+  "workbench.editor.empty.hint": "hidden"
 }
