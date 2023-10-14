@@ -22,15 +22,42 @@ class ContactsRepository {
       resolve(contacts);
     });
   }
+
   findById(id) {
     return new Promise((resolve, reject) => {
       resolve(contacts.find((contact) => contact.id === id));
     });
   }
+
+  findByEmail(email) {
+    return new Promise((resolve, reject) => {
+      resolve(contacts.find((contact) => contact.email === email));
+    });
+  }
+
   delete(id) {
     return new Promise((resolve, reject) => {
-      contacts = contacts.filter((contacts) => contacts.id !== id);
+      contacts = contacts.filter((contact) => contact.id !== id);
       resolve();
+    });
+  }
+
+  create({ name, email, phone, category_id }) {
+    return new Promise((resolve) => {
+      const newContact = { id: v4(), name, email, phone, category_id };
+      contacts.push(newContact);
+      resolve(newContact);
+    });
+  }
+
+  update(id, { name, email, phone, category_id }) {
+    return new Promise((resolve) => {
+      const updateContact = { id, name, email, phone, category_id };
+
+      contacts = contacts.map((contact) =>
+        contact.id === id ? updateContact : contact
+      );
+      resolve(updateContact);
     });
   }
 }
